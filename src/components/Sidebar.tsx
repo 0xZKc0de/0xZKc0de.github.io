@@ -37,7 +37,7 @@ export const Sidebar = () => {
             </div>
           </div>
           
-          <h1 className="text-xl font-bold mb-1">0x00Jeff</h1>
+          <h1 className="text-xl font-bold mb-1">0xzkc0de</h1>
           <p className="text-sm text-muted-foreground text-center leading-relaxed">
             Binary exploitation, OS internals<br />
             and web hacking

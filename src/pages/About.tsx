@@ -23,7 +23,7 @@ const About = () => {
                     </AvatarFallback>
                   </Avatar>
                 </div>
-                <CardTitle className="font-mono text-2xl">0x00Jeff</CardTitle>
+                <CardTitle className="font-mono text-2xl">0xzkc0de</CardTitle>
                 <CardDescription className="text-center">
                   Cybersecurity Specialist & Penetration Tester
                 </CardDescription>
@@ -132,7 +132,7 @@ const About = () => {
                 <TerminalBlock>
                   <CommandLine
                     lineNumber={1}
-                    command="cat /home/0x00jeff/philosophy.txt"
+                    command="cat /home/0xzkc0de/philosophy.txt"
                     output={
                       <div className="space-y-2 text-muted-foreground">
                         <div>"Security through obscurity is not security at all."</div>

@@ -2,15 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Redirect handling for GitHub Pages
+      (function(){
+        let redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0x00Jeff - Cybersecurity Portfolio</title>
+    <title>0xzkc0de - Cybersecurity Portfolio</title>
     <meta name="description" content="Binary exploitation, OS internals and web hacking writeups" />
-    <meta name="author" content="0x00Jeff" />
+    <meta name="author" content="0xzkc0de" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="0x00Jeff - Cybersecurity Portfolio" />
+    <meta property="og:title" content="0xzkc0de - Cybersecurity Portfolio" />
     <meta property="og:description" content="Binary exploitation, OS internals and web hacking writeups" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
