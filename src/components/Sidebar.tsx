@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from 'react-router-dom';
 
 const navigation = [
-  { name: "HOME", icon: Home, href: "/" },
+  { name: "HOME", icon: Home, href: "/dashboard" },
+  { name: "TERMINAL", icon: Code, href: "/terminal" },
   { name: "PROJECTS", icon: FolderOpen, href: "/projects" },
   { name: "BLOG", icon: FileText, href: "/blog" },
   { name: "ABOUT", icon: User, href: "/about" },

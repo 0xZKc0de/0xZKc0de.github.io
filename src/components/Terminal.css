@@ -1,0 +1,123 @@
+.terminal-container {
+  width: 90vw;
+  max-width: 800px;
+  height: 80vh;
+  margin: 2rem auto;
+  background-color: #1a1b26;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-header {
+  background-color: #24283b;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #414868;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 1rem;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background-color: #f7768e; }
+.yellow { background-color: #e0af68; }
+.green { background-color: #9ece6a; }
+
+.terminal-title {
+  color: #a9b1d6;
+  font-size: 0.9rem;
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  color: #a9b1d6;
+  background-color: #1a1b26;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.boot-sequence {
+  color: #7aa2f7;
+  margin-bottom: 1rem;
+}
+
+.terminal-line {
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+}
+
+.terminal-line.command {
+  color: #7dcfff;
+}
+
+.terminal-line.output {
+  color: #9ece6a;
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.prompt-symbol {
+  color: #7dcfff;
+  margin-right: 0.5rem;
+}
+
+.terminal-prompt input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #a9b1d6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+/* Scrollbar styling */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: #24283b;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: #414868;
+  border-radius: 4px;
+}
+
+/* Matrix animation effect */
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.terminal-line.matrix {
+  font-family: monospace;
+  animation: matrixRain 0.5s ease-out;
+  text-shadow: 0 0 5px #7dcfff;
+}

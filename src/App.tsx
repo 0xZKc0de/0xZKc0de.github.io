@@ -2,8 +2,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import Terminal from "./pages/Terminal";
+import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./components/DashboardLayout";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -22,16 +24,54 @@ const App = () => (
       <Sonner />
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Terminal />} />
+          <Route path="/terminal" element={<Terminal />} />
+          
+          {/* Dashboard Routes */}
+          <Route path="/dashboard" element={
+            <DashboardLayout>
+              <Dashboard />
+            </DashboardLayout>
+          } />
+          
+          {/* Protected Routes */}
+          <Route path="/projects" element={
+            <DashboardLayout>
+              <Projects />
+            </DashboardLayout>
+          } />
+          <Route path="/about" element={
+            <DashboardLayout>
+              <About />
+            </DashboardLayout>
+          } />
           
           {/* Blog Routes */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/leetcode" element={<LeetCode />} />
-          <Route path="/blog/tryhackme" element={<TryHackMe />} />
-          <Route path="/blog/hackthebox" element={<HackTheBox />} />
-          <Route path="/blog/technical" element={<Technical />} />
+          <Route path="/blog" element={
+            <DashboardLayout>
+              <Blog />
+            </DashboardLayout>
+          } />
+          <Route path="/blog/leetcode" element={
+            <DashboardLayout>
+              <LeetCode />
+            </DashboardLayout>
+          } />
+          <Route path="/blog/tryhackme" element={
+            <DashboardLayout>
+              <TryHackMe />
+            </DashboardLayout>
+          } />
+          <Route path="/blog/hackthebox" element={
+            <DashboardLayout>
+              <HackTheBox />
+            </DashboardLayout>
+          } />
+          <Route path="/blog/technical" element={
+            <DashboardLayout>
+              <Technical />
+            </DashboardLayout>
+          } />
 
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
