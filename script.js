@@ -22,8 +22,14 @@ const commands = {
   about() { return data.about },
   projects() { return data.projects.map(p=>`- ${p.name}: ${p.desc}`).join('\n') },
   skills() { return data.skills.join(', ') },
-  contact() { return 'Email: hello@example.com\nGitHub: https://github.com/0xZKc0de' },
-  resume() { return '<a href="https://example.com/resume.pdf" target="_blank">Download resume</a>' },
+  projects() {
+    // render as HTML cards
+    return data.projects.map(p=>`<div class="project-card"><h4>${p.name}</h4><p>${p.desc}</p><div class="muted"><a href="https://${p.desc.split('—').pop().trim()||'#'}" target="_blank">repo</a></div></div>`).join('')
+  },
+  skills() { return data.skills.join(', ') },
+  contact() { return `<div class="project-card"><h4>Contact</h4><p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p><p>GitHub: <a href="https://github.com/0xZKc0de" target="_blank">github.com/0xZKc0de</a></p></div>` },
+  resume() { return `<div class="project-card"><h4>Resume</h4><p><a href="https://example.com/resume.pdf" target="_blank">Download PDF</a></p></div>` },
+  blog() { return `<div class="project-card"><h4>Latest posts</h4><p class="muted">No posts yet — this would list your blog entries.</p></div>` },
   clear() { output.innerHTML = ''; return '' },
   theme(arg){
     const t = arg.trim().toLowerCase();
@@ -101,6 +107,12 @@ form.addEventListener('submit', e=>{
 });
 
 input.addEventListener('keydown', e=>{
+  // Ctrl+L to clear (common terminal shortcut)
+  if(e.ctrlKey && e.key.toLowerCase()==='l'){
+    e.preventDefault();
+    commands.clear();
+    return;
+  }
   if(e.key==='ArrowUp'){
     if(histPos>0) histPos--;
     input.value = history[histPos] || '';
