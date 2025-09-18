@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>0xZKc0de — Terminal Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="terminal" role="main" aria-label="Terminal portfolio">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="title">0xZKc0de@portfolio: ~</span>
+      </div>
+
+      <div id="output" class="terminal-output" tabindex="0"></div>
+
+      <form id="cmd-form" class="terminal-input" action="" autocomplete="off">
+        <label for="cmd" class="visually-hidden">Command</label>
+        <span class="prompt">$</span>
+        <input id="cmd" name="cmd" autofocus autocomplete="off" spellcheck="false" />
+      </form>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
