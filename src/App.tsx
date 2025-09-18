@@ -8,9 +8,9 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
-import LeetCode from "./pages/blogs/LeetCode";
-import TryHackMe from "./pages/blogs/TryHackMe";
-import HackTheBox from "./pages/blogs/HackTheBox";
+import CompetitiveProgramming from "./pages/blogs/CompetitiveProgramming";
+import SoftwareDev from "./pages/blogs/SoftwareDev";
+import Cryptography from "./pages/blogs/Cryptography";
 import Technical from "./pages/blogs/Technical";
 
 const queryClient = new QueryClient();
