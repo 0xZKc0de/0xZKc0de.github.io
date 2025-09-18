@@ -6,52 +6,36 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "BlogVerse - Multi-tenant Blogging Platform",
-    description: "A robust Spring Boot blogging platform supporting multiple users, rich text editing, and real-time analytics. Features OAuth2 authentication and PostgreSQL database.",
-    tags: ["Spring Boot", "React", "PostgreSQL", "OAuth2", "REST API"],
-    demoUrl: "#",
-    githubUrl: "#",
-    status: "Completed"
-  },
-  {
-    title: "Spring Boot Microservices Blog",
-    description: "A microservices-based blogging system with separate services for posts, comments, and user management. Includes service discovery and API gateway.",
-    tags: ["Spring Boot", "Microservices", "Docker", "Kubernetes", "MongoDB"],
-    demoUrl: "#",
-    githubUrl: "#",
-    status: "In Progress"
-  },
-  {
-    title: "TryHackMe - b3dr0ck",
-    description: "A complete walkthrough of the b3dr0ck room focusing on certificate exploitation, web enumeration, and TLS configuration vulnerabilities.",
-    tags: ["TryHackMe", "Web Hacking", "Certificates", "Enumeration"],
-    demoUrl: "#",
-    githubUrl: "#",
-    status: "Completed"
-  },
-  {
-    title: "Real-time Chat Application",
-    description: "Full-stack chat application with WebSocket integration, supporting private messages, group chats, and file sharing capabilities.",
-    tags: ["Spring WebSocket", "React", "Redis", "WebSocket", "JWT"],
-    demoUrl: "#",
-    githubUrl: "#",
-    status: "Completed"
-  },
-  {
-    title: "Network Scanner Tool",
-    description: "A Python-based network reconnaissance tool with advanced port scanning, service detection, and vulnerability assessment capabilities.",
-    tags: ["Python", "Network Security", "Reconnaissance"],
-    demoUrl: "#",
-    githubUrl: "#",
-    status: "Completed"
-  },
-  {
-    title: "E-Learning Platform API",
-    description: "RESTful API for an e-learning platform with course management, user progress tracking, and content delivery features.",
-    tags: ["Spring Boot", "AWS", "MySQL", "Spring Security", "JUnit"],
+    title: "TechShare - Blogging Platform",
+    description: "A modern blogging platform similar to Medium, focused on technical content sharing. Features include rich text editing, categorization, user authentication, and analytics. Built with Spring Boot and modern security practices.",
+    tags: ["Spring Boot", "Hibernate", "PostgreSQL", "JWT", "REST API", "Security"],
+    features: [
+      "JWT-based authentication and authorization",
+      "Rich text editor for blog posts",
+      "Category and tag management",
+      "User profiles and analytics",
+      "PostgreSQL for reliable data storage",
+      "RESTful API architecture"
+    ],
     demoUrl: "#",
     githubUrl: "#",
     status: "In Progress"
+  },
+  {
+    title: "Distributed Calculation System",
+    description: "A robust distributed computation system leveraging Java's powerful concurrency features. Implements both Socket-based and RMI communication for distributed processing across multiple nodes.",
+    tags: ["Java", "Sockets", "Threads", "RMI", "Distributed Systems"],
+    features: [
+      "Multi-threaded task processing",
+      "Socket-based communication between nodes",
+      "RMI implementation for remote method calls",
+      "Load balancing across nodes",
+      "Fault tolerance and error handling",
+      "Real-time task monitoring"
+    ],
+    demoUrl: "#",
+    githubUrl: "#",
+    status: "Completed"
   }
 ];
 
@@ -66,7 +50,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-8">
           {projects.map((project, index) => (
             <Card key={index} className="bg-card border-border hover:border-primary/50 transition-all duration-300">
               <CardHeader>
@@ -78,27 +62,46 @@ const Projects = () => {
                     {project.status}
                   </Badge>
                 </div>
-                <CardTitle className="font-mono text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardTitle className="font-mono text-2xl mb-2">{project.title}</CardTitle>
+                <CardDescription className="text-muted-foreground text-base">
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline" className="text-xs font-mono">
-                      {tag}
-                    </Badge>
-                  ))}
+              <CardContent className="space-y-6">
+                {/* Technologies */}
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge key={tagIndex} variant="outline" className="text-xs font-mono">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex gap-2">
+
+                {/* Key Features */}
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold">Key Features</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
+                    {project.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <div className="mr-2 mt-1">•</div>
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-4 pt-2">
                   <Button variant="outline" size="sm" className="font-mono">
                     <Github className="w-4 h-4 mr-2" />
-                    Code
+                    View Code
                   </Button>
                   <Button variant="outline" size="sm" className="font-mono">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
+                    Live Demo
                   </Button>
                 </div>
               </CardContent>
