@@ -1,68 +1,27 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>0xZKc0de — Terminal Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0x00Jeff - Cybersecurity Portfolio</title>
+    <meta name="description" content="Binary exploitation, OS internals and web hacking writeups" />
+    <meta name="author" content="0x00Jeff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="0x00Jeff - Cybersecurity Portfolio" />
+    <meta property="og:description" content="Binary exploitation, OS internals and web hacking writeups" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
+
   <body>
-    <div class="workspace with-sidebar">
-      <aside class="left-sidebar" aria-label="Primary navigation">
-        <div class="sidebar-top">
-          <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="avatar" />
-          <h1>0xZKc0de</h1>
-          <p class="role muted">Full-stack dev • systems • crypto</p>
-        </div>
-        <nav class="sidebar-nav">
-          <button class="side-btn active" data-cmd="about">About</button>
-          <button class="side-btn" data-cmd="projects">Projects</button>
-          <button class="side-btn" data-cmd="skills">Skills</button>
-          <button class="side-btn" data-cmd="contact">Contact</button>
-          <button class="side-btn" data-cmd="resume">Resume</button>
-        </nav>
-        <div class="sidebar-footer muted">© 2025</div>
-      </aside>
-
-      <main class="terminal" role="main" aria-label="Terminal portfolio">
-        <div class="terminal-header">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="title">0xZKc0de@portfolio: ~</span>
-        </div>
-
-        <div id="output" class="terminal-output" tabindex="0"></div>
-
-        <form id="cmd-form" class="terminal-input" action="" autocomplete="off">
-          <label for="cmd" class="visually-hidden">Command</label>
-          <span class="prompt">$</span>
-          <input id="cmd" name="cmd" autofocus autocomplete="off" spellcheck="false" />
-        </form>
-      </main>
-
-      <aside class="mouse-area" aria-label="Mouse playground">
-        <div class="mouse-header">Mouse Playground</div>
-        <p class="muted">Click an icon to run a command in the terminal.</p>
-        <div class="icons">
-          <button class="icon" data-cmd="about">👤<span>About</span></button>
-          <button class="icon" data-cmd="projects">📁<span>Projects</span></button>
-          <button class="icon" data-cmd="skills">🛠️<span>Skills</span></button>
-          <button class="icon" data-cmd="contact">✉️<span>Contact</span></button>
-          <button class="icon" data-cmd="resume">📄<span>Resume</span></button>
-          <button class="icon" data-cmd="help">❔<span>Help</span></button>
-        </div>
-
-        <div class="play-area">
-          <div class="cursor-dot" aria-hidden="true"></div>
-          <div class="hint muted">Move your mouse here</div>
-        </div>
-      </aside>
-    </div>
-
-    <script src="script.js" defer></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cybersecurity Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Main Colors - Dark Theme */
+    --background: 210 15% 8%;
+    --foreground: 210 15% 85%;
+    
+    /* Cards & Surfaces */
+    --card: 210 15% 10%;
+    --card-foreground: 210 15% 85%;
+    
+    /* Interactive Elements */
+    --popover: 210 15% 12%;
+    --popover-foreground: 210 15% 85%;
+    
+    /* Brand Colors */
+    --primary: 140 80% 60%;
+    --primary-foreground: 210 15% 8%;
+    
+    /* Secondary Surfaces */
+    --secondary: 210 15% 15%;
+    --secondary-foreground: 210 15% 75%;
+    
+    /* Muted Elements */
+    --muted: 210 15% 12%;
+    --muted-foreground: 210 15% 55%;
+    
+    /* Accent Colors */
+    --accent: 195 100% 65%;
+    --accent-foreground: 210 15% 8%;
+    
+    /* Status Colors */
+    --destructive: 0 80% 65%;
+    --destructive-foreground: 210 15% 85%;
+    
+    /* Borders & Inputs */
+    --border: 210 15% 20%;
+    --input: 210 15% 15%;
+    --ring: 140 80% 60%;
+    
+    /* Terminal & Code */
+    --terminal-bg: 210 20% 5%;
+    --terminal-border: 210 15% 25%;
+    --terminal-text: 140 80% 60%;
+    
+    /* Sidebar */
+    --sidebar-background: 210 15% 6%;
+    --sidebar-foreground: 210 15% 75%;
+    --sidebar-primary: 140 80% 60%;
+    --sidebar-primary-foreground: 210 15% 8%;
+    --sidebar-accent: 210 15% 12%;
+    --sidebar-accent-foreground: 210 15% 75%;
+    --sidebar-border: 210 15% 18%;
+    --sidebar-ring: 140 80% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(140 80% 60%), hsl(195 100% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 15% 8%), hsl(210 15% 6%));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+  
+  /* Code Blocks */
+  .terminal {
+    background: hsl(var(--terminal-bg));
+    border: 1px solid hsl(var(--terminal-border));
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-x: auto;
+  }
+  
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid hsl(var(--terminal-border));
+  }
+  
+  .terminal-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+  
+  .terminal-dot.red { background: hsl(0 80% 65%); }
+  .terminal-dot.yellow { background: hsl(50 80% 65%); }
+  .terminal-dot.green { background: hsl(120 80% 65%); }
+  
+  /* Syntax Highlighting */
+  .highlight-command { color: hsl(var(--terminal-text)); }
+  .highlight-string { color: hsl(195 100% 65%); }
+  .highlight-number { color: hsl(280 80% 70%); }
+  .highlight-comment { color: hsl(var(--muted-foreground)); }
+  
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
