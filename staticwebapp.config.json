@@ -1,0 +1,10 @@
+{
+  "name": "GitHub Pages Router Config",
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ]
+}
