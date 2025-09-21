@@ -2,11 +2,11 @@ import { Layout } from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 
 const projects = [
   {
-    title: "TechShare - Blogging Platform",
+    title: "Blog-In - Blogging Platform",
     description: "A modern blogging platform similar to Medium, focused on technical content sharing. Features include rich text editing, categorization, user authentication, and analytics. Built with Spring Boot and modern security practices.",
     tags: ["Spring Boot", "Hibernate", "PostgreSQL", "JWT", "REST API", "Security"],
     features: [
@@ -98,10 +98,6 @@ const Projects = () => {
                   <Button variant="outline" size="sm" className="font-mono">
                     <Github className="w-4 h-4 mr-2" />
                     View Code
-                  </Button>
-                  <Button variant="outline" size="sm" className="font-mono">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
                   </Button>
                 </div>
               </CardContent>

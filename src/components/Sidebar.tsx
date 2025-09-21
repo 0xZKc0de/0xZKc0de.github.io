@@ -8,7 +8,6 @@ const navigation = [
   { name: "TERMINAL", icon: Code, href: "/terminal" },
   { name: "PROJECTS", icon: FolderOpen, href: "/projects" },
   { name: "BLOG", icon: FileText, href: "/blog" },
-  { name: "ABOUT", icon: User, href: "/about" },
 ];
 
 const social = [
@@ -39,10 +38,6 @@ export const Sidebar = () => {
           </div>
           
           <h1 className="text-xl font-bold mb-1">0xzkc0de</h1>
-          <p className="text-sm text-muted-foreground text-center leading-relaxed">
-            Binary exploitation, OS internals<br />
-            and web hacking
-          </p>
         </div>
 
         {/* Main Navigation */}

@@ -7,13 +7,8 @@ import Terminal from "./pages/Terminal";
 import Dashboard from "./pages/Dashboard";
 import DashboardLayout from "./components/DashboardLayout";
 import Projects from "./pages/Projects";
-import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
-import LeetCode from "./pages/blogs/LeetCode";
-import TryHackMe from "./pages/blogs/TryHackMe";
-import HackTheBox from "./pages/blogs/HackTheBox";
-import Technical from "./pages/blogs/Technical";
 
 const queryClient = new QueryClient();
 
@@ -40,36 +35,11 @@ const App = () => (
               <Projects />
             </DashboardLayout>
           } />
-          <Route path="/about" element={
-            <DashboardLayout>
-              <About />
-            </DashboardLayout>
-          } />
           
           {/* Blog Routes */}
           <Route path="/blog" element={
             <DashboardLayout>
               <Blog />
-            </DashboardLayout>
-          } />
-          <Route path="/blog/leetcode" element={
-            <DashboardLayout>
-              <LeetCode />
-            </DashboardLayout>
-          } />
-          <Route path="/blog/tryhackme" element={
-            <DashboardLayout>
-              <TryHackMe />
-            </DashboardLayout>
-          } />
-          <Route path="/blog/hackthebox" element={
-            <DashboardLayout>
-              <HackTheBox />
-            </DashboardLayout>
-          } />
-          <Route path="/blog/technical" element={
-            <DashboardLayout>
-              <Technical />
             </DashboardLayout>
           } />
 

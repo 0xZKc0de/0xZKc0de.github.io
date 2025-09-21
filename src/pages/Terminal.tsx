@@ -103,12 +103,12 @@ interface TerminalLine {
 }
 
 const aboutArt = `
-  ╔══════════════════╗
-  ║   0xZK.c0de     ║
-  ║ -=-=-=-=-=-=-   ║
-  ║ ZeRo KnOwLeDgE  ║
-  ║ CoDe  MaStEr    ║
-  ╚══════════════════╝
+  ██████╗ ██╗  ██╗██╗  ██╗ ██████╗ ██████╗ ██████╗ ███████╗
+  ╚══███╔╝╚██╗██╔╝╚██╗██╔╝██╔═══██╗██╔══██╗██╔══██╗██╔════╝
+    ███╔╝  ╚███╔╝  ╚███╔╝ ██║   ██║██║  ██║██║  ██║█████╗  
+   ███╔╝   ██╔██╗  ██╔██╗ ██║   ██║██║  ██║██║  ██║██╔══╝  
+  ███████╗██╔╝ ██╗██╔╝ ██╗╚██████╔╝██████╔╝██████╔╝███████╗
+  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 `;
 
 const TerminalPage: React.FC = () => {
@@ -117,7 +117,10 @@ const TerminalPage: React.FC = () => {
     { type: 'output', content: 'Type "help" for available commands' }
   ]);
   const [input, setInput] = React.useState('');
+  const [commandHistory, setCommandHistory] = React.useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = React.useState(-1);
   const bottomRef = React.useRef<HTMLDivElement>(null);
+  const terminalBodyRef = React.useRef<HTMLDivElement>(null);
 
   const commands = {
     help: () => `Available commands:
@@ -125,49 +128,68 @@ help     - Show this help message
 about    - Who am I?
 skills   - My technical skills
 projects - View my projects
-contact  - How to reach me
 clear    - Clear terminal
 exit     - Exit to dashboard`,
     
     about: () => `${aboutArt}
-[IDENTITY VERIFIED]
-===================
-Codename: 0xZKc0de
-Status: Active
-Specialization: Cybersecurity Research
-Mission: Breaking boundaries in digital security
+[PROFILE LOADED]
+================
+Name: 0xZKc0de
+Status: Active Developer
+Interests: High-Quality Software Development
+Passion: Problem Solving & System Optimization
 
-"I navigate through the complex landscapes of digital security,
-finding vulnerabilities where others see only code."`,
+[FOCUS AREAS]
+=============
+• Developing robust and efficient software solutions
+• Solving complex technical challenges
+• Low-level system programming and optimization
+• Creating clean, maintainable code
+• Exploring the depths of computer systems
+• PWN (Binary Exploitation)
+• Cryptography and Security Protocols
+
+"From the silent pulse of the binary tide,
+a universe of logic awakens in the halls of memory,
+where every address is a world waiting to be built or broken."`,
     
     skills: () => `[SKILL MATRIX LOADED]
 =====================
-OFFENSIVE SECURITY
-└─⊳ Penetration Testing
-└─⊳ Red Teaming
-└─⊳ Exploit Development
+CYBER SECURITY
+└─⊳ PWN
+└─⊳ Reverse Engineering
 
-DEFENSIVE MEASURES
-└─⊳ Incident Response
-└─⊳ Malware Analysis
-└─⊳ Threat Hunting`,
+WEB DEVELOPMENT
+└─⊳ Backend Development
+└─⊳ Spring Boot Framework
+└─⊳ RESTful APIs
+
+COMPETITIVE PROGRAMMING
+└─⊳ Algorithm Design
+└─⊳ Data Structures
+└─⊳ Problem Solving
+
+CRYPTOGRAPHY
+└─⊳ Cryptographic Algorithms
+└─⊳ Security Protocols
+└─⊳ Digital Signatures`,
     
-    projects: () => `[PROJECT DATABASE]
+    projects: () => {
+      // Open GitHub in new tab
+      window.open('https://github.com/0xZKc0de', '_blank');
+      return `[PROJECT DATABASE]
 =================
-1. Project GHOST - Advanced Network Scanner
-2. Binary Ninja - Exploitation Framework
-3. Digital Fortress - Security Testing Lab
+All projects are available on GitHub!
 
-[ACCESS LEVEL: RESTRICTED]
-More details available upon request...`,
+[REDIRECTING TO GITHUB...]
+==========================
+Opening: github.com/0xZKc0de
+in a new tab to explore repositories and projects.
+
+[ACCESS LEVEL: PUBLIC]
+All source code and documentation available.`;
+    },
     
-    contact: () => `[SECURE CHANNELS]
-=================
-→ GitHub: github.com/0xZKc0de
-→ Signal: [ENCRYPTED]
-→ Matrix: @0xZKc0de:matrix.org
-
-[TRANSMISSION ENDS]`,
     
     clear: () => {
       setHistory([]);
@@ -180,11 +202,23 @@ More details available upon request...`,
     }
   };
 
+  const scrollToBottom = () => {
+    setTimeout(() => {
+      bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   const handleCommand = (cmd: string) => {
     const command = cmd.toLowerCase().trim();
     
     // Add the command to history
     setHistory(prev => [...prev, { type: 'input', content: cmd }]);
+    
+    // Add to command history if not empty
+    if (cmd.trim() !== '') {
+      setCommandHistory(prev => [...prev, cmd]);
+      setHistoryIndex(-1);
+    }
     
     // Process the command
     if (command in commands) {
@@ -197,12 +231,31 @@ More details available upon request...`,
     }
     
     setInput('');
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    scrollToBottom();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleCommand(input);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (commandHistory.length > 0) {
+        const newIndex = historyIndex === -1 ? commandHistory.length - 1 : Math.max(0, historyIndex - 1);
+        setHistoryIndex(newIndex);
+        setInput(commandHistory[newIndex]);
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex !== -1) {
+        const newIndex = historyIndex + 1;
+        if (newIndex >= commandHistory.length) {
+          setHistoryIndex(-1);
+          setInput('');
+        } else {
+          setHistoryIndex(newIndex);
+          setInput(commandHistory[newIndex]);
+        }
+      }
     }
   };
 
@@ -217,7 +270,7 @@ More details available upon request...`,
           </Buttons>
           <Title>0xZKc0de@terminal:~$</Title>
         </TerminalHeader>
-        <TerminalBody>
+        <TerminalBody ref={terminalBodyRef}>
           {history.map((line, index) => (
             <Output key={index}>
               {line.type === 'input' ? (

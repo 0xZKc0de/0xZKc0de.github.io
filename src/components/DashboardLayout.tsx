@@ -55,9 +55,6 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
           <NavLink to="/terminal" $active={location.pathname === '/terminal'}>
             Terminal
           </NavLink>
-          <NavLink to="/about" $active={location.pathname === '/about'}>
-            About
-          </NavLink>
           <NavLink to="/projects" $active={location.pathname === '/projects'}>
             Projects
           </NavLink>
