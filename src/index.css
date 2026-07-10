@@ -159,15 +159,15 @@ a:hover {
 }
 
 .navbar-links a {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 400;
   color: var(--text-secondary);
   padding: 0.3rem 0.65rem;
   border-radius: 4px;
   text-decoration: none;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   transition: color 0.15s, background 0.15s;
 }
 
@@ -273,10 +273,9 @@ a:hover {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-sans);
   line-height: 1.4;
 }
 
@@ -616,15 +615,15 @@ a:hover {
 }
 
 .mobile-nav a {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 400;
   color: var(--text-secondary);
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
   text-decoration: none;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .mobile-nav a:hover,
