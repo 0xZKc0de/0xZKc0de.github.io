@@ -273,9 +273,10 @@ a:hover {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
+  font-style: italic;
   line-height: 1.4;
 }
 
