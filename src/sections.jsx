@@ -416,34 +416,3 @@ export function CVSection() {
     </section>
   );
 }
-
-/* ============================================================
-   SECTION: GALLERY & INTERESTS
-   ============================================================ */
-export function GallerySection() {
-  const photos = [
-    { src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80', alt: 'Computer Desk', caption: 'My workspace' },
-    { src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80', alt: 'Code on screen', caption: 'Late night coding sessions' },
-    { src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80', alt: 'Tech setup', caption: 'Building new things' },
-    { src: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80', alt: 'Matrix code', caption: 'Security & Systems' },
-  ];
-
-  return (
-    <section className="section-block" aria-labelledby="gallery">
-      <SectionHeader id="gallery">Gallery &amp; Interests</SectionHeader>
-      
-      <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-        A collection of photos I&apos;ve taken, setups I like, and moments I want to share.
-      </p>
-
-      <div className="gallery-grid">
-        {photos.map((photo, i) => (
-          <figure className="gallery-figure" key={i}>
-            <img src={photo.src} alt={photo.alt} className="gallery-image" loading="lazy" />
-            <figcaption className="gallery-caption">{photo.caption}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-  );
-}
