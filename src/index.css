@@ -676,3 +676,108 @@ a:hover {
 :target {
   scroll-margin-top: 70px;
 }
+
+/* =====================================================
+   MARKDOWN BLOG POST
+   ===================================================== */
+.markdown-content {
+  line-height: 1.75;
+}
+
+.markdown-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 0.5rem;
+}
+
+.markdown-content h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+}
+
+.markdown-content h3 {
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+.markdown-content p {
+  margin-bottom: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.markdown-content li {
+  margin-bottom: 0.4rem;
+}
+
+.markdown-content code {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85em;
+}
+
+.markdown-content pre {
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.75rem;
+}
+
+.markdown-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.9em;
+}
+
+.markdown-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-style: italic;
+  background: var(--tag-bg);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.markdown-content blockquote p:last-child {
+  margin-bottom: 0;
+}

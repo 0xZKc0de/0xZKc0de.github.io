@@ -10,6 +10,7 @@ import {
   BlogSection,
   CVSection,
 } from './sections';
+import BlogPost from './BlogPost';
 import './index.css';
 
 /* -----------------------------------------------------------
@@ -88,6 +89,7 @@ export default function App() {
           <Route path="/projects" element={<ProjectsSection />} />
           <Route path="/certifications" element={<CertificationsSection />} />
           <Route path="/blog" element={<BlogSection />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/cv" element={<CVPage />} />
         </Routes>
 

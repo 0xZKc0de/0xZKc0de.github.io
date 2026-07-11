@@ -1,4 +1,5 @@
 import { Award, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 /* ---- Shared Section Header ---- */
 export function SectionHeader({ id, children }) {
@@ -280,12 +281,12 @@ export function BlogSection() {
     {
       title: 'Comprehensive Guide to LLM Quantization: From FP16 to GGUF/ONNX 4-bit',
       date: '2025',
-      href: '#',
+      href: '/blog/llm-quantization',
     },
     {
       title: 'Deploying vLLM on AWS SageMaker: Best Practices for High-Throughput Serving',
       date: '2025',
-      href: '#',
+      href: '/blog/deploying-vllm',
     },
   ];
 
@@ -307,15 +308,13 @@ export function BlogSection() {
               {date}
             </span>
           </div>
-          <a
-            href={href}
+          <Link
+            to={href}
             className="project-link"
             style={{ flexShrink: 0 }}
-            target="_blank"
-            rel="noreferrer"
           >
             [Read Note]
-          </a>
+          </Link>
         </div>
       ))}
     </section>
