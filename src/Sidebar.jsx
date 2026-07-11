@@ -1,5 +1,5 @@
 import {
-  MapPin,
+  Globe,
   Mail,
 } from 'lucide-react';
 
@@ -100,8 +100,8 @@ export default function Sidebar() {
       {/* Contact Details */}
       <ul className="contact-list">
         <li className="contact-item">
-          <MapPin size={14} className="contact-icon" aria-hidden="true" />
-          <span>Casablanca, Morocco</span>
+          <Globe size={14} className="contact-icon" aria-hidden="true" />
+          <span>127.0.0.1</span>
         </li>
         <li className="contact-item">
           <Mail size={14} className="contact-icon" aria-hidden="true" />

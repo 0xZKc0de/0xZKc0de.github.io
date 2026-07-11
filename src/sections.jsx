@@ -215,9 +215,12 @@ export function ProjectsSection() {
    ============================================================ */
 export function CertificationsSection() {
   const certs = [
-    { icon: <Award size={14} />, text: 'OCI 2025 Certified DevOps Professional — Oracle' },
-    { icon: <Award size={14} />, text: 'Neo4j Certified Professional — Neo4j' },
-    { icon: <Award size={14} />, text: 'HackerRank Software Engineer Certificate' },
+    { icon: <Award size={14} />, text: 'DevOps Mastery', href: 'https://www.coursera.org/account/accomplishments/specialization/CGJHDYHMKBUP?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=s12n' },
+    { icon: <Award size={14} />, text: 'Databricks AI Agent Fundamentals', href: 'https://credentials.databricks.com/e0014e8c-a519-4b82-9384-29cceed02a03#acc.spJDOgzr' },
+    { icon: <Award size={14} />, text: 'Oracle Cloud Infrastructure 2025 Certified DevOps Professional', href: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=C85B50BEB603B6553FDAE57CFA604A36FB614F9415C1171E71F43AF1C2D76615' },
+    { icon: <Award size={14} />, text: 'Neo4j Certified Professional', href: 'https://graphacademy.neo4j.com/c/ebcef487-30ec-43a1-ac8b-b787092d0c41' },
+    { icon: <Award size={14} />, text: 'AI Fundamentals certificate', href: 'https://www.datacamp.com/skill-verification/AIF0022989737055' },
+    { icon: <Award size={14} />, text: 'Astronomer Certification for Apache Airflow 3 Fundamentals', href: 'https://www.credly.com/badges/2d2236ca-58bb-4658-acbe-02248652cde0/linked_in_profile' },
   ];
 
   const awards = [
@@ -227,10 +230,16 @@ export function CertificationsSection() {
 
   const renderList = (items) => (
     <ul className="cert-list">
-      {items.map(({ icon, text }) => (
+      {items.map(({ icon, text, href }) => (
         <li key={text}>
           <span className="cert-bullet" aria-hidden="true">{icon}</span>
-          <span>{text}</span>
+          {href ? (
+            <a href={href} target="_blank" rel="noreferrer">
+              {text}
+            </a>
+          ) : (
+            <span>{text}</span>
+          )}
         </li>
       ))}
     </ul>

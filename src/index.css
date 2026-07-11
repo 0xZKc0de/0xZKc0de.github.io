@@ -503,6 +503,17 @@ a:hover {
   border-bottom: none;
 }
 
+.cert-list a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.cert-list a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 .cert-bullet {
   color: var(--accent);
   flex-shrink: 0;
