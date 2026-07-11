@@ -41,6 +41,28 @@ const Linkedin = ({ size, className, 'aria-hidden': ariaHidden }) => (
   </svg>
 );
 
+const XIcon = ({ size, className, 'aria-hidden': ariaHidden }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>
+    <path d="M4 4l11.73 16h4.27L8.27 4zm0 16l6.77-6.77m2.46-2.46L20 4" />
+  </svg>
+);
+
+const Codeforces = ({ size, className, 'aria-hidden': ariaHidden }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>
+    <path d="M4 14v6" />
+    <path d="M10 8v12" />
+    <path d="M16 4v16" />
+  </svg>
+);
+
+const ResearchGate = ({ size, className, 'aria-hidden': ariaHidden }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+    <path d="M8 8h4a2 2 0 0 1 0 4H8v4" />
+    <path d="M12 12l4 4" />
+  </svg>
+);
+
 export default function Sidebar() {
   return (
     <aside className="sidebar">
@@ -83,8 +105,13 @@ export default function Sidebar() {
         </li>
         <li className="contact-item">
           <Mail size={14} className="contact-icon" aria-hidden="true" />
-          <a href="mailto:elhaddadmohamed963@gmail.com">
-            elhaddadmohamed963@gmail.com
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=elhaddadmohamed963@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            title="elhaddadmohamed963@gmail.com"
+          >
+            Email
           </a>
         </li>
         <li className="contact-item">
@@ -105,6 +132,36 @@ export default function Sidebar() {
             rel="noreferrer"
           >
             GitHub
+          </a>
+        </li>
+        <li className="contact-item">
+          <XIcon size={14} className="contact-icon" aria-hidden="true" />
+          <a
+            href="https://x.com/username"
+            target="_blank"
+            rel="noreferrer"
+          >
+            X (Twitter)
+          </a>
+        </li>
+        <li className="contact-item">
+          <Codeforces size={14} className="contact-icon" aria-hidden="true" />
+          <a
+            href="https://codeforces.com/profile/username"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Codeforces
+          </a>
+        </li>
+        <li className="contact-item">
+          <ResearchGate size={14} className="contact-icon" aria-hidden="true" />
+          <a
+            href="https://researchgate.net/profile/username"
+            target="_blank"
+            rel="noreferrer"
+          >
+            ResearchGate
           </a>
         </li>
       </ul>
